@@ -28,3 +28,11 @@ module "ecs" {
   ecs_sg_id        = module.security.ecs_sg_id
   target_group_arn = module.alb.target_group_arn
 }
+
+module "jenkins" {
+  source = "./modules/jenkins"
+
+  public_subnet_id  = module.vpc.public_subnets[0]
+  private_subnet_id = module.vpc.public_subnets[1]
+  jenkins_sg_id = module.security.jenkins_sg_id
+}

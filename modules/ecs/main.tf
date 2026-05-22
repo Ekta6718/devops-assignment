@@ -44,7 +44,7 @@ resource "aws_ecs_task_definition" "app" {
     {
       name = "devops-app"
 
-      image = "438987839500.dkr.ecr.ap-south-1.amazonaws.com/devops-app:v7"
+      image     = "438987839500.dkr.ecr.ap-south-1.amazonaws.com/devops-app:v7"
       essential = true
 
       portMappings = [
